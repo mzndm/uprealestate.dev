@@ -1,0 +1,23 @@
+{
+  "name": "hedgehog.test",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Luis Figo <ace.spades@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.*",
+    "bootstrap-sass": "^3.*"
+  }
+}

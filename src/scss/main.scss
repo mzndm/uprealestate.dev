@@ -1,0 +1,13 @@
+@import "bootstrap-custom";
+@import "media-queries";
+@import "variable";
+@import "header";
+@import "first-screen";
+* {
+  //outline: 1px lightskyblue dotted;
+}
+* {
+  box-sizing: border-box;
+  color: $black;
+  font-family: $Regular;
+}
