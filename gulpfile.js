@@ -10,6 +10,10 @@ var gulp 		= require('gulp'),
     concat      = require('gulp-concat'),
     imagemin    = require('gulp-imagemin'),
     pngquant    = require('imagemin-pngquant'),
+
+    //bower = require('gulp-bower'),
+    fontAwesome = require('node-font-awesome'),
+
     browserSync = require('browser-sync'),
     reload      = browserSync.reload;
 
@@ -39,13 +43,13 @@ var path = {
     },
     lib: {
         js:     [ 'src/js/libs/libs.js' ]
-       // css:    [ 'src/js/libs/libs.js' ]
     },
     clean: 'build/'
 
 };
 
 var config = {
+    bowerDir: 'bower',
     server: {
         baseDir: "./build"
     },
@@ -65,7 +69,10 @@ gulp.task('style:build', function () {
     gulp.src(path.src.style)
         .pipe(sourcemaps.init())
         .pipe(sass({
-            includePaths: ['bower/bootstrap-sass/assets/stylesheets/'],
+            includePaths: [
+               config.bowerDir + '/bootstrap-sass/assets/stylesheets/',
+               'fontAwesome.scssPath'
+            ],
             // outputStyle: 'compressed',
             sourceMap: true,
             errLogToConsole: true
@@ -112,12 +119,18 @@ gulp.task('fonts:build', function() {
         .pipe(gulp.dest(path.build.fonts))
 });
 
+gulp.task('fontAwesome:build', function () {
+   gulp.src(fontAwesome.fonts)
+       .pipe(gulp.dest(path.build.fonts + 'font-awesome'));
+});
+
 gulp.task('build', [
     'html:build',
     'js:build',
     'lib_js:build',
     'style:build',
     'fonts:build',
+    'fontAwesome:build',
     'image:build'
 ]);
 
