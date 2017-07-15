@@ -1,0 +1,10 @@
+.header {
+  &-top  {
+    @include border($light-grey, 0, 0, 1px, 0);
+    //height: 50px;
+  }
+  &-contacts {}
+  &-menu {}
+}
+@import "header-top";
+@import "header-contacts";

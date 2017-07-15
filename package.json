@@ -18,7 +18,6 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-bower": "0.0.13",
     "gulp-cache": "^0.4.6",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^3.3.0",
@@ -28,8 +27,5 @@
     "imagemin-pngquant": "^5.0.1",
     "node-font-awesome": "^1.0.2",
     "reload": "^2.0.0"
-  },
-  "dependencies": {
-    "font-awesome": "^4.7.0"
   }
 }

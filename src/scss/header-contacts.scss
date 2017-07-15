@@ -1,0 +1,48 @@
+.logo {
+  &__img {}
+}
+
+.contacts {
+  &__item {
+    @extend .col-md-3;
+    padding: 0;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__icon {
+    height: 60px;
+    width: 60px;
+    float: left;
+    border: 2px solid $green;
+    border-radius: 50%;
+    line-height: 55px;
+    text-align: center;
+    margin-right: 40px;
+    &--call {
+      @extend .fa-phone;
+    }
+    &--mail {
+      @extend .fa-envelope;
+    }
+    &--visit {
+      @extend .fa-map-marker;
+    }
+  }
+  &__text {
+    line-height: 1.5;
+    padding: 10px 0;
+  }
+  &__title {
+    @include big-text($black, $normal);
+    text-transform: uppercase;
+  }
+  &__description {
+    @include normal-text($black, $big);
+  }
+  &__link {
+    text-decoration: none;
+  }
+}

@@ -10,10 +10,7 @@ var gulp 		= require('gulp'),
     concat      = require('gulp-concat'),
     imagemin    = require('gulp-imagemin'),
     pngquant    = require('imagemin-pngquant'),
-
-    //bower = require('gulp-bower'),
     fontAwesome = require('node-font-awesome'),
-
     browserSync = require('browser-sync'),
     reload      = browserSync.reload;
 
@@ -126,11 +123,11 @@ gulp.task('fontAwesome:build', function () {
 
 gulp.task('build', [
     'html:build',
-    'js:build',
-    'lib_js:build',
-    'style:build',
     'fonts:build',
     'fontAwesome:build',
+    'style:build',
+    'lib_js:build',
+    'js:build',
     'image:build'
 ]);
 

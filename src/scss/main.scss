@@ -8,19 +8,15 @@
 
 $fa-font-path: "/fonts/font-awesome";
 @import "../../bower/font-awesome/scss/font-awesome.scss";
+
 * {
   //outline: 1px lightskyblue dotted;
 }
 * {
   box-sizing: border-box;
-  color: $black;
+  color: $grey;
   //font-family: $Regular;
 }
-
-.youtube {
- // @extend .fa;
-  @extend .fa-youtube;
-  &:hover {
-    color: green;
-  }
+i {
+  @extend .fa;
 }

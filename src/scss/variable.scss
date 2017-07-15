@@ -1,21 +1,42 @@
-//$Regular: "PT_Sans-Caption-Web-Regular", Helvetica, Arial, sans-serif;
-//$Bold: "PT_Sans-Caption-Web-Bold", Helvetica, Arial, sans-serif;
-
 // font-size
-$large: 72px;
-$big: 48px;
-$normal: 21px;
-$small: 1em;
+$big: 15px;
+$normal: 14px;
+$small: 13px;
 
 //  color
-$black: #222222;
-$yellow: #eddb7a;
-$red: #d83737;
-$red-dark: #952828;
-$red-light: #f53939;
+$grey: #808080;
+$light-grey: #e7e4e4;
+$green: #b2d12d;
+
+$black: #000;
+
+//$Light: "Lato-Light", Helvetica, Arial, sans-serif;
+$Regular: "Lato-Regular", Helvetica, Arial, sans-serif;
+$Bold: "Lato-Bold", Helvetica, Arial, sans-serif;
+
+@mixin normal-text ($color, $size) {
+  color: $color;
+  font-family: $Regular;
+  font-size: $size;
+}
+@mixin big-text ($color, $size) {
+  color: $color;
+  font-family: $Bold;
+  font-size: $size;
+}
+
+@mixin border($color, $top, $right, $bottom, $left) {
+  border: {
+    //color:;
+    top: $top $color;
+    right: $right $color;
+    bottom: $bottom $color;
+    left: $left $color;
+    style: solid;
+  }
+}
+
 
 // device width
 $ipad-portrait: 768px;
-
-$header_height: 50px;
 
