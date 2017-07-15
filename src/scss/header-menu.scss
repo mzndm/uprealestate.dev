@@ -1,0 +1,61 @@
+.menu {
+  //@extend .col-md-10;
+  float: left;
+  padding-left: 15px;
+  background: #353f45;
+  &__item {
+    display: inline-block;
+    float: left;
+    padding: 21px 0;
+    &:hover {
+      @include border($green, 3px, 0, 3px, 0);
+      padding: 18px 0;
+      cursor: pointer;
+      background: rgba(178, 209, 45, 0.1);
+      .submenu {
+        display: block;
+      }
+    }
+  }
+  &__parent {
+    position: relative;
+  }
+  &__link {
+    @include border(#596065, 0, 0, 0, 1px);
+    @include big-text($black, $normal);
+    padding: 0 42px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  width: 270px;
+  padding: 0 20px;
+  background: #353f45;
+  &__item {
+    @include normal-text(#949ba0, $normal);
+    @include border(#545c61, 0, 0, 1px, 0);
+    line-height: 2.5;
+  }
+  &__link {
+    text-decoration: none;
+  }
+}
+
+.object {
+  float: right;
+  background: $orange;
+  padding: 21px;
+  &__item {}
+  &__link {
+    @include big-text($black, $normal);
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+  }
+}

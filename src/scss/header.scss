@@ -4,7 +4,10 @@
     //height: 50px;
   }
   &-contacts {}
-  &-menu {}
+  &-menu {
+    background: #353f45;
+  }
 }
 @import "header-top";
 @import "header-contacts";
+@import "header-menu";

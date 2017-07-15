@@ -3,6 +3,7 @@
   @include border($light-grey, 0, 1px, 0, 1px);
   font-size: $small;
   padding: 15px 0;
+  margin-left: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
