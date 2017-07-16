@@ -5,7 +5,7 @@
 .contacts {
   &__item {
     @extend .col-md-3;
-    //padding: 0;
+    @extend .col-sm-3;
     height: 130px;
     display: flex;
     flex-direction: row;
@@ -24,6 +24,8 @@
     line-height: 55px;
     text-align: center;
     margin-right: 40px;
+    @include max-screen($ipad-landscape) {margin-right: 15px;}
+    @extend .hidden-sm;
     &--call {
       @extend .fa-phone;
     }

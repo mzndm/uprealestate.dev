@@ -1,5 +1,7 @@
 .social {
   @extend .col-md-2;
+  @extend .col-sm-2;
+  @extend .col-xs-12;
   @include border($light-grey, 0, 1px, 0, 1px);
   font-size: $small;
   padding: 15px 0;
@@ -61,22 +63,59 @@
 }
 
 .language {
+  position: relative;
   &__item {
-
+    //margin-right: 10px;
+    text-decoration: none;
   }
   &__icon {
     @extend .fa-angle-left;
     transform: rotate(-90deg);
+    margin-left: 10px;
   }
   &__flag {
     padding-right: 10px;
   }
   &__name {}
+  &__list {
+    display: none;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    background: $white;
+    z-index: 2;
+    width: 100%;
+    margin-top: 15px;
+    left: 0;
+    @include border($light-grey, 0, 1px, 1px, 1px);
+    &--active {
+      display: block;
+    }
+  }
+  &__list-item {
+    @include border($light-grey, 1px, 0, 0, 0);
+    padding: 15px ;
+  }
 }
 
 .currency {
   text-transform: uppercase;
+  position: relative;
   &__item {}
+  &__icon {
+    @extend .language__icon;
+  }
+  &__list {
+    @extend .language__list;
+    display: none;
+    &-item {
+      @extend .language__list-item;
+    }
+    &--active {
+      display: block;
+    }
+  }
+
 }
 
 .register {

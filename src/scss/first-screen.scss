@@ -48,6 +48,7 @@
   }
   &__wrapper {
     @extend .col-md-6;
+    @extend .col-sm-6;
     &--left {
       padding-left: 0;
     }
@@ -60,6 +61,7 @@
   }
   &__item {
     @extend .col-md-4;
+    @extend .col-sm-4;
     margin-bottom: 25px;
   }
   &__label {
@@ -116,6 +118,10 @@
     width: 100%;
     padding: 12px;
     margin-top: 2em;
+    @include screen($ipad-portrait, $md) {
+      margin-left: -15px ;
+      width: auto;
+    }
   }
   &__unit {
     @include normal-text($grey, 16px);

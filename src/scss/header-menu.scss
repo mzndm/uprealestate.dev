@@ -27,6 +27,8 @@
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
+    @include screen($ipad-landscape, $notebook-landscape - 1px) {padding: 0 30px;}
+    @include screen($ipad-portrait, $ipad-landscape - 1px) {padding: 0 15px;}
   }
 }
 
