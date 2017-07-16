@@ -1,51 +1,123 @@
 .menu {
-  //@extend .col-md-10;
-  float: left;
-  padding-left: 15px;
+  @extend .col-sm-12;
   background: #353f45;
+  @include max-screen($ipad-portrait - 1px) {
+    display: none;
+    width: 100%;
+    padding: 0 20px;
+  }
+  &__button {
+    background: #353f45;
+    padding: 20px;
+    &-line {
+      width: 30px;
+      height: 3px;
+      background: $white;
+      border-radius: 2px;
+      margin: 0 auto 5px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    &--active {
+      background: $green;
+    }
+  }
   &__item {
     display: inline-block;
     float: left;
     padding: 21px 0;
     &:hover {
       @include border($green, 3px, 0, 3px, 0);
-      padding: 18px 0;
+      padding: 19px 0;
       cursor: pointer;
       background: rgba(178, 209, 45, 0.1);
-      .submenu {
-        display: block;
+      @include max-screen($ipad-portrait - 1px) {
+        background: none;
+        border: none;
+        padding: 2px 0;
+        @include border(#72797d, 0, 0, 1px, 0);
+        .menu__link {
+          color: $green;
+        }
       }
     }
-  }
-  &__parent {
-    position: relative;
+    @include max-screen($ipad-portrait - 1px) {
+      float: none;
+      display: block;
+      @include border(#72797d, 0, 0, 1px, 0);
+    }
   }
   &__link {
     @include border(#596065, 0, 0, 0, 1px);
     @include big-text($black, $normal);
+    display: block;
     padding: 0 42px;
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
-    @include screen($ipad-landscape, $notebook-landscape - 1px) {padding: 0 30px;}
-    @include screen($ipad-portrait, $ipad-landscape - 1px) {padding: 0 15px;}
+    @include screen($ipad-landscape, $notebook-landscape - 1px) {
+      padding: 0 30px;
+    }
+    @include screen($ipad-portrait, $ipad-landscape - 1px) {
+      padding: 0 15px;
+    }
+    @include max-screen($ipad-portrait - 1px) {
+      border-left: none;
+      padding: 0;
+    }
+  }
+  &__parent {
+    position: relative;
+    &:hover {
+      @include max-screen($ipad-portrait - 1px) {
+        background: none;
+        border: none;
+        padding: 20px 0 0;
+      }
+      .submenu {
+        display: block;
+      }
+    }
   }
 }
 
 .submenu {
   display: none;
   position: absolute;
-  top: 60px;
+  top: 58px;
   width: 270px;
   padding: 0 20px;
   background: #353f45;
+  z-index: 2;
+  @include border($green, 3px, 0, 0, 0);
   &__item {
     @include normal-text(#949ba0, $normal);
-    @include border(#545c61, 0, 0, 1px, 0);
-    line-height: 2.5;
+    @include border(#72797d, 0, 0, 1px, 0);
+    @include max-screen($ipad-portrait - 1px){
+      &:last-of-type {
+        border: none;
+      }
+    }
   }
   &__link {
+    display: block;
     text-decoration: none;
+    line-height: 2.5;
+    &:hover {
+      color: $green;
+    }
+    @include max-screen($ipad-portrait - 1px) {
+      display: block;
+      line-height: 4;
+    }
+  }
+  @include max-screen($ipad-portrait - 1px){
+    @include border(#545c61, 1px, 0, 1px, 0);
+    position: static;
+    width: 100%;
+    margin-top: 18px;
+    background: #283136;
   }
 }
 
@@ -59,5 +131,12 @@
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
+  }
+  @include max-screen($ipad-portrait - 1px) {
+    background: $green;
+    margin: 20px 0;
+    width: 100%;
+    float: none;
+    text-align: center;
   }
 }

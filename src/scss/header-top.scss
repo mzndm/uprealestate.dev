@@ -10,6 +10,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  @include screen(0, $ipad-portrait - 1px) {
+    border: 0;
+    text-align: center;
+    margin-left: 0;
+  }
   &__item {
     @extend .col-sm-2;
     @include border($light-grey, 0, 1px, 0, 0);
@@ -18,6 +23,9 @@
     border-right: 1px solid $light-grey;
     &:last-of-type {
       border-right: 0;
+    }
+    @include screen(0, $ipad-portrait - 1px) {
+      padding: 0 15px;
     }
   }
   &__icon {
@@ -43,19 +51,42 @@
       @extend .fa-pinterest-p;
     }
   }
+  &__visible-xs {
+    @extend .visible-xs;
+  }
+  &__hidden-xs {
+    @extend .hidden-xs;
+  }
 }
 
 .top-right {
   @extend .pull-right;
+  @extend .col-xs-12;
+  @include max-screen($ipad-portrait - 1px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  width: auto;
   &__item {
     @include normal-text($grey, $small);
     @include border($light-grey, 0 , 1px, 0, 1px);
     padding: 15px;
     float: left;
+    @include max-screen($ipad-portrait - 1px) {
+      border: none;
+      text-align: center;
+    }
+    @include max-screen($iphone5-portrait) {
+      padding: 15px 9px;
+    }
   }
 }
 
 .work-times {
+  @extend .col-xs-12;
+  width: auto;
   &__icon {
     @extend .fa-clock-o;
   }
